@@ -14,4 +14,4 @@ soup_faculty_table = soup.tbody
 faculty_box = soup_faculty_table.find_all('tr')
 
 for i in faculty_box:
-	print(i.id)
+	print(i.contents)
