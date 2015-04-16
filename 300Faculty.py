@@ -7,8 +7,11 @@ response = urllib.request.urlopen(url, data=None)
 html = response.read()
 soup = BeautifulSoup(html)
 
-#f = open('page.html', 'w')
+f = open('derp.html', 'w')
 
-#f.write(soup.prettify())
+# f.write(soup.tbody.prettify())
+soup_faculty_table = soup.tbody
+faculty_box = soup_faculty_table.find_all('tr')
 
-print(soup.body)
+for i in faculty_box:
+	print(i.id)
