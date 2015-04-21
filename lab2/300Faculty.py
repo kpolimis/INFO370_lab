@@ -4,6 +4,9 @@
 from bs4 import BeautifulSoup
 import urllib.request
 
+# save file name
+save_file = open('faculty.csv', 'w')
+
 # turn webpage into beautiful soup object
 def url_to_beautifulsoup(url):
 	response = urllib.request.urlopen(url, data=None)
@@ -22,7 +25,7 @@ soup_faculty_box = soup_faculty_table.find_all('tr')
 # generic faculty page
 faculty_url = 'http://evergreen.edu/faculty/instructor/'
 
-no_name_count = 0 #debug
+no_name_count = 0 # debug
 
 # extract bio from faculty page 
 for i in soup_faculty_box:
@@ -32,7 +35,7 @@ for i in soup_faculty_box:
 	try:
 		str_bio = soup_bio.contents[0]
 		split_str_bio = str_bio.split('Ph.D., ')
-		print(split_str_bio[1] + '\n')
+		print(split_str_bio[1] + '\n') # debug
 	except AttributeError:
 		print(i['id'] + ' does not have a bio.\n')
 		no_name_count += 1
