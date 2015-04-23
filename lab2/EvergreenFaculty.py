@@ -6,7 +6,8 @@ import urllib.request
 
 # save file name
 save_file = open('faculty.csv', 'w')
-save_file.write('Last Name, First Name, Department, Ph.D. from School\n')
+save_file.write(
+	'Last Name, First Name, University, Department, Ph.D. from School\n')
 
 # turn webpage into beautiful soup object
 def url_to_beautifulsoup(url):
@@ -26,7 +27,7 @@ soup_faculty_box = soup_faculty_table.find_all('tr')
 # generic faculty page
 faculty_url = 'http://evergreen.edu/faculty/instructor/'
 
-no_name_count = 0 # debug
+no_info_count = 0 # debug
 
 # for every faculty member listed
 for i in soup_faculty_box:
@@ -48,18 +49,19 @@ for i in soup_faculty_box:
 		print(str_phd_univ + '\n') # debug'
 
 		# if nothing fails write all info to file
-		save_file.write(str_faculty_name + ', ' + 'not applicable, ' + 
-			str_phd_univ + '\n')
+		save_file.write(str_faculty_name + 
+			', Evergreen University, not applicable, ' + str_phd_univ + 
+			'\n')
 
 	# if faculty page has no bio element
 	except AttributeError:
 		print(i['id'] + ' does not have a bio.\n')
-		no_name_count += 1
+		no_info_count += 1
 
 	# if faculty member doesn't have phd
 	except IndexError:
 		print(i['id'] + ' does not have a phd\n')
-		no_name_count += 1
+		no_info_count += 1
 
 # debug prints number of faculty members who do not qualify
-print(no_name_count)
+print(no_info_count)
