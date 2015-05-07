@@ -1,3 +1,10 @@
+# Rohan Aras
+# Lab 4
+# 5/7/15
+# graphs the frequency of generating heads vs the total number of tosses
+# I learned that for loops require brackets in R. I also learned that RStudio doesn't have the 
+# nicest of debug tools. Generally, I improved my knowledge of syntax in R.
+
 
 # simulate the coin tosses
 experiment1 = sample(0:1, 10, replace=T)
