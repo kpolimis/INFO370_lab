@@ -1,3 +1,12 @@
+## Question 1 ##
+# http://www.tandfonline.com/doi/full/10.1080/09613210802045547
+# Compated people who exercise an insufficient amount (less than 149min) vs a moderate amount (150min+).
+# Related these numbers to features of their built environment.
+# For the bike lanes portion, 60.5% of the people who were insufficiently active did not have one near by 
+# compared to 68.7% of people who were active.
+# Insufficiently active people had less retail clusters nearby (mean = 1.336, sd = 1.273) compared to active
+# people (mean = 1.465, sd = 1.302)
+
 ## Question 2 ##
 scores = c(90,95,89,71,73,96,87,95,107,89,96,80,97,95,102,97,93,101,82,83,74,91,83,98,95,111,99,120,93,84)
 
