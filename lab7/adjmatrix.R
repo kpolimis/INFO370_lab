@@ -1,4 +1,7 @@
-
+# Rohan Aras
+# Lab 7
+# 5/21/15
+# creates and adjancecy matrix from the graph in class and regraphs it
 
 library(igraph)
 
